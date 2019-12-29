@@ -31,7 +31,8 @@ class SessionStore: ObservableObject {
                 self.session = Session(
                     uid: user.uid,
                     email: user.email,
-                    displayName: user.displayName)
+                    displayName: user.displayName,
+                    isAnonymous: user.isAnonymous)
             } else {
                 // if we don't have a user, set our session to nil
                 self.session = nil
@@ -48,4 +49,5 @@ struct Session {
     var uid: String
     var email: String?
     var displayName: String?
+    var isAnonymous: Bool
 }

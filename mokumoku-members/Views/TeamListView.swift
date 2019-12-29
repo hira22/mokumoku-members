@@ -20,7 +20,9 @@ struct TeamListView: View {
         NavigationView {
             List {
                 ForEach(teams) { team in
-                    Text(team[\.name])
+                    NavigationLink(destination: TeamView(team: team)) {
+                        Text(team[\.name])
+                    }
                 }
             }
             .onAppear {
