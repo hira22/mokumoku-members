@@ -16,24 +16,32 @@ struct NewTeamView: View {
     
     @State var isPrivate: Bool = false
     
+    @State var isAuthViewPresent: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack {
                 TextField("new team name...", text: self.$team[\.name])
                 Toggle(isOn: $isPrivate){
-                    Text("private")
+                    Text("Private Team")
                 }
             }
-            .navigationBarTitle("NewTeam")
+            .sheet(isPresented: $isAuthViewPresent) {
+                AuthView()
+            }
+            .navigationBarTitle("New Team")
             .navigationBarItems(
                 trailing: Button("save") {
-                    if let uid = self.sessionStore.session?.uid {
-                        self.team[\.owners] = .arrayUnion([uid])
-                        self.team[\.members] = .arrayUnion([uid])
-                        self.team[\.type] = self.isPrivate ? Team.Model.TeamType.closed.rawValue : Team.Model.TeamType.opened.rawValue
+                    guard let user = self.sessionStore.user else {
+                        self.isAuthViewPresent = true
+                        return
                     }
+                    self.team[\.owners] = .arrayUnion([user.id])
+                    self.team[\.members] = .arrayUnion([user.id])
+                    self.team[\.type] = self.isPrivate ? Team.Model.TeamType.closed.rawValue : Team.Model.TeamType.opened.rawValue
                     self.team.save()
                     self.presentationMode.wrappedValue.dismiss()
+                    
                 }
             )
         }
