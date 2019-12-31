@@ -40,6 +40,9 @@ struct TeamListView: View {
                     })
                     .listen()
             }
+            .onDisappear {
+                self.dataSource.stop()
+            }
             .navigationBarItems(trailing:
                 Button("NewTeam") {
                     self.isNewTeamViewPresented.toggle()
