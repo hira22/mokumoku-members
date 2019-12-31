@@ -31,6 +31,12 @@ struct TopView: View {
                             Image(systemName: "doc.on.doc")
                             Text("Task") }
                         .tag(1)
+                    SettingView()
+                        .environmentObject(sessionStore)
+                        .tabItem {
+                            Image(systemName: "gear")
+                            Text("Setting") }
+                        .tag(2)
                 }
             }
             
