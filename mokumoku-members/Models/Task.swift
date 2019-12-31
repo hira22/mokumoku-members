@@ -18,15 +18,14 @@ final class Task: Object, DataRepresentable, DataCacheable, ObservableObject, Id
     
     struct Model: Modelable, Codable {
         var status: Status = .working
-        var startAt: Timestamp = Timestamp(date: Date())
-        var finishedAt: Timestamp = Timestamp(date: Date())
+        var completedAt: ServerTimestamp = .pending
         
-        var toDo: OperableArray<String> = []
-        var reason: OperableArray<String> = []
+        var toDo: String = ""
+        var reason: String = ""
         
-        var done: OperableArray<String> = []
-        var knowledge: OperableArray<String> = []
-        var wantToDo: OperableArray<String> = []
+        var done: String = ""
+        var knowledge: String = ""
+        var wantToDo: String = ""
         
         enum Status: String, CaseIterable, Codable {
             case completed

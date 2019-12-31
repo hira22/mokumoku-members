@@ -18,6 +18,7 @@ final class User: Object, DataRepresentable, DataCacheable, ObservableObject, Id
     
     struct Model: Modelable, Codable {
         var name: String = ""
+        var personalTeamRef: DocumentReference!
     }
     
     var lister: ListenerRegistration?
