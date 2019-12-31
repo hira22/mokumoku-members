@@ -25,16 +25,23 @@ struct TeamView: View {
     var body: some View {
         NavigationView {
             List {
+                
                 ForEach(tasks) { task in
-                    Text(task.data?.toDo.first ?? "")
+                    Text(task[\.toDo])
                 }
+                
             }
-        }.onAppear {
-            self.dataSource
-                .onChanged({ (_, snapshot) in
-                    self.tasks = snapshot.after
-                })
-                .listen()
+            .onAppear {
+                self.dataSource
+                    .onChanged({ (_, snapshot) in
+                        self.tasks = snapshot.after
+                    })
+                    .listen()
+            }
+            .onDisappear {
+                self.dataSource.stop()
+            }
+            .navigationBarTitle(team[\.name])
         }
     }
 }

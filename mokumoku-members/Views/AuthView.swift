@@ -29,8 +29,8 @@ struct AuthView: View {
                     
                 }
             }, label: {
-                Text("Sign In Anonymously")
-            }).alert(isPresented: $isAlertShow) {
+                Text("Sign In Anonymously") }
+            ).alert(isPresented: $isAlertShow) {
                 Alert(title: Text(error.debugDescription))
             }
         }
