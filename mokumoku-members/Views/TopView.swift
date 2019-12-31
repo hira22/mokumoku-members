@@ -11,26 +11,25 @@ import SwiftUI
 struct TopView: View {
     @State private var selection: Int = 0
     @EnvironmentObject var sessionStore: SessionStore
-    
-    @State var isAuthShow: Bool = false
 
     var body: some View {
         
         VStack {
-            if (sessionStore.session == nil) {
+            if sessionStore.user == nil {
                 AuthView()
             } else {
                 TabView(selection: $selection) {
-                    TeamListView()
+                    TeamListView(user: sessionStore.user!)
                         .environmentObject(sessionStore)
                         .tabItem {
                             Image(systemName: "person.and.person")
                             Text("Team") }
                         .tag(0)
-                    Text("You")
+                    TaskListView(user: sessionStore.user!)
+                        .environmentObject(sessionStore)
                         .tabItem {
-                            Image(systemName: "person")
-                            Text("You") }
+                            Image(systemName: "doc.on.doc")
+                            Text("Task") }
                         .tag(1)
                 }
             }

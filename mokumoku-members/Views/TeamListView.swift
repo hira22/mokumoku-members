@@ -13,8 +13,16 @@ struct TeamListView: View {
     @EnvironmentObject var sessionStore: SessionStore
     
     @State var teams: [Team] = []
-    let dataSource: DataSource<Team> = Team.order(by: "updatedAt").limit(to: 30).dataSource()
+    let dataSource: DataSource<Team>
     @State var isNewTeamViewPresented: Bool = false
+    
+    init (user: User) {
+        dataSource = Team
+            .where("members", arrayContains: user.documentReference.documentID )
+            .order(by: "updatedAt")
+            .limit(to: 30)
+            .dataSource()
+    }
     
     var body: some View {
         NavigationView {
@@ -46,6 +54,6 @@ struct TeamListView: View {
 
 struct TeamListView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamListView()
+        TeamListView(user: User())
     }
 }
