@@ -10,13 +10,28 @@ import SwiftUI
 import Ballcap
 
 struct TeamListView: View {
-    @EnvironmentObject var sessionStore: SessionStore
+    var user: User
     
     @State var teams: [Team] = []
     let dataSource: DataSource<Team>
-    @State var isNewTeamViewPresented: Bool = false
+    
+    enum Presentation: View, Hashable, Identifiable {
+        case new(user: User)
+        case edit(user: User, team: Team)
+        
+        var id: Self { self }
+        var body: some View {
+            switch self {
+            case .new(let user):            return TeamEditView(user: user, team: Team())
+            case .edit(let user, let team): return TeamEditView(user: user, team: team.copy())
+            }
+        }
+    }
+    
+    @State var presentation: Presentation?
     
     init (user: User) {
+        self.user = user
         dataSource = Team
             .where("members", arrayContains: user.documentReference.documentID )
             .order(by: "updatedAt")
@@ -30,6 +45,11 @@ struct TeamListView: View {
                 ForEach(teams) { team in
                     NavigationLink(destination: TeamView(team: team)) {
                         Text(team[\.name])
+                            .contextMenu{
+                                Button("Edit") {
+                                    self.presentation = .edit(user: self.user, team: team)
+                                }
+                        }
                     }
                 }
             }
@@ -44,13 +64,10 @@ struct TeamListView: View {
                 self.dataSource.stop()
             }
             .navigationBarItems(trailing:
-                Button("NewTeam") {
-                    self.isNewTeamViewPresented.toggle()
+                Button("New") {
+                    self.presentation = .new(user: self.user)
                 }
-            )
-            .sheet(isPresented: $isNewTeamViewPresented) {
-                NewTeamView().environmentObject(self.sessionStore)
-            }
+            ).sheet(item: $presentation) {$0}
         }
     }
 }

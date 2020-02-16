@@ -20,13 +20,14 @@
 		A065ED4523B23A940022734D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED4423B23A940022734D /* User.swift */; };
 		A065ED4723B3850F0022734D /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED4623B3850F0022734D /* TeamListView.swift */; };
 		A065ED4A23B388880022734D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A065ED4923B388880022734D /* GoogleService-Info.plist */; };
-		A065ED4C23B38DAF0022734D /* NewTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED4B23B38DAF0022734D /* NewTeamView.swift */; };
+		A065ED4C23B38DAF0022734D /* TeamEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED4B23B38DAF0022734D /* TeamEditView.swift */; };
 		A065ED4E23B392800022734D /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED4D23B392800022734D /* SessionStore.swift */; };
 		A065ED5023B39ADF0022734D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED4F23B39ADF0022734D /* AuthView.swift */; };
 		A065ED5223B72A0C0022734D /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065ED5123B72A0C0022734D /* TeamView.swift */; };
-		A0C7A50523BA033700214586 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7A50423BA033700214586 /* NewTaskView.swift */; };
+		A0C7A50523BA033700214586 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7A50423BA033700214586 /* TaskEditView.swift */; };
 		A0C7A50723BB274D00214586 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7A50623BB274D00214586 /* TaskListView.swift */; };
 		A0C7A50923BB354200214586 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7A50823BB354200214586 /* SettingView.swift */; };
+		A0C7A50B23BB537900214586 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7A50A23BB537900214586 /* TaskView.swift */; };
 		C639645F0C6D5C063ABB3DA3 /* Pods_mokumoku_members.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D75B79F7169D6EB5BB56C9A /* Pods_mokumoku_members.framework */; };
 		CD26E7256FD7A3F34CBB62D9 /* Pods_mokumoku_membersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A6D9ED4A852BA55FFCE071 /* Pods_mokumoku_membersTests.framework */; };
 		D810E27431EE81408B89893D /* Pods_mokumoku_members_mokumoku_membersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8608508FAA0790885418AF6E /* Pods_mokumoku_members_mokumoku_membersUITests.framework */; };
@@ -76,13 +77,14 @@
 		A065ED4423B23A940022734D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A065ED4623B3850F0022734D /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		A065ED4923B388880022734D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A065ED4B23B38DAF0022734D /* NewTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamView.swift; sourceTree = "<group>"; };
+		A065ED4B23B38DAF0022734D /* TeamEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEditView.swift; sourceTree = "<group>"; };
 		A065ED4D23B392800022734D /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		A065ED4F23B39ADF0022734D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A065ED5123B72A0C0022734D /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
-		A0C7A50423BA033700214586 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		A0C7A50423BA033700214586 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		A0C7A50623BB274D00214586 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		A0C7A50823BB354200214586 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		A0C7A50A23BB537900214586 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C8A6D9ED4A852BA55FFCE071 /* Pods_mokumoku_membersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mokumoku_membersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7960E92804721840E4DC208 /* Pods-mokumoku-membersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mokumoku-membersTests.release.xcconfig"; path = "Target Support Files/Pods-mokumoku-membersTests/Pods-mokumoku-membersTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,9 +221,10 @@
 				A065ED1323B237CE0022734D /* TopView.swift */,
 				A065ED4623B3850F0022734D /* TeamListView.swift */,
 				A065ED5123B72A0C0022734D /* TeamView.swift */,
-				A065ED4B23B38DAF0022734D /* NewTeamView.swift */,
+				A065ED4B23B38DAF0022734D /* TeamEditView.swift */,
 				A0C7A50623BB274D00214586 /* TaskListView.swift */,
-				A0C7A50423BA033700214586 /* NewTaskView.swift */,
+				A0C7A50A23BB537900214586 /* TaskView.swift */,
+				A0C7A50423BA033700214586 /* TaskEditView.swift */,
 				A0C7A50823BB354200214586 /* SettingView.swift */,
 				A065ED4F23B39ADF0022734D /* AuthView.swift */,
 			);
@@ -469,8 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A065ED5223B72A0C0022734D /* TeamView.swift in Sources */,
-				A065ED4C23B38DAF0022734D /* NewTeamView.swift in Sources */,
+				A065ED4C23B38DAF0022734D /* TeamEditView.swift in Sources */,
 				A065ED4123B23A3A0022734D /* Task.swift in Sources */,
+				A0C7A50B23BB537900214586 /* TaskView.swift in Sources */,
 				A0C7A50923BB354200214586 /* SettingView.swift in Sources */,
 				A065ED1023B237CE0022734D /* AppDelegate.swift in Sources */,
 				A065ED4723B3850F0022734D /* TeamListView.swift in Sources */,
@@ -478,7 +482,7 @@
 				A065ED4523B23A940022734D /* User.swift in Sources */,
 				A0C7A50723BB274D00214586 /* TaskListView.swift in Sources */,
 				A065ED5023B39ADF0022734D /* AuthView.swift in Sources */,
-				A0C7A50523BA033700214586 /* NewTaskView.swift in Sources */,
+				A0C7A50523BA033700214586 /* TaskEditView.swift in Sources */,
 				A065ED1223B237CE0022734D /* SceneDelegate.swift in Sources */,
 				A065ED4323B23A750022734D /* Team.swift in Sources */,
 				A065ED1423B237CE0022734D /* TopView.swift in Sources */,

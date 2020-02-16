@@ -20,13 +20,11 @@ struct TopView: View {
             } else {
                 TabView(selection: $selection) {
                     TeamListView(user: sessionStore.user!)
-                        .environmentObject(sessionStore)
                         .tabItem {
                             Image(systemName: "person.and.person")
                             Text("Team") }
                         .tag(0)
                     TaskListView(user: sessionStore.user!)
-                        .environmentObject(sessionStore)
                         .tabItem {
                             Image(systemName: "doc.on.doc")
                             Text("Task") }

@@ -14,7 +14,18 @@ final class User: Object, DataRepresentable, DataCacheable, ObservableObject, Id
     
     override class var name: String { "users" }
     
-    @Published var data: User.Model?
+    @Published var data: User.Model? {
+        didSet {
+            guard let personalTeamRef = data?.personalTeamRef else {
+                return
+            }
+            let _ = Team(personalTeamRef).get { document, error in
+                self.personalTeam = document
+            }
+        }
+    }
+    
+    private(set) var personalTeam: Team?
     
     struct Model: Modelable, Codable {
         var name: String = ""
